@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zsnoin网站集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#7B61FF',
+                        accent: '#00C48C',
+                        dark: '#1D2129',
+                        light: '#F2F3F5'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 24px rgba(22, 93, 255, 0.15);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-light to-white min-h-screen font-inter text-dark">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 transition-all duration-300 shadow-sm"
+        id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div
+                    class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+                    <i class="fa fa-link text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                    Zsnoin网站集</h1>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="text-dark/80 hover:text-primary transition-colors">首页</a>
+                <a href="#projects" class="text-dark/80 hover:text-primary transition-colors">项目</a>
+                <a href="#about" class="text-dark/80 hover:text-primary transition-colors">关于</a>
+            </div>
+            <button class="md:hidden text-dark/80 hover:text-primary transition-colors" id="menuBtn">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden bg-white shadow-lg absolute top-full left-0 right-0 transform -translate-y-full opacity-0 transition-all duration-300 pointer-events-none"
+            id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#home" class="text-dark/80 hover:text-primary transition-colors py-2">首页</a>
+                <a href="#projects" class="text-dark/80 hover:text-primary transition-colors py-2">项目</a>
+                <a href="#about" class="text-dark/80 hover:text-primary transition-colors py-2">关于</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 pt-24 pb-16">
+        <!-- 英雄区 -->
+        <section id="home" class="min-h-[80vh] flex flex-col justify-center items-center text-center">
+            <div
+                class="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 animate-float">
+                <i class="fa fa-link text-3xl text-white"></i>
+            </div>
+            <h1
+                class="text-[clamp(2.5rem,5vw,4rem)] font-bold mb-4 text-shadow bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                Zsnoin网站集
+            </h1>
+            <p class="text-[clamp(1rem,2vw,1.25rem)] text-dark/70 max-w-2xl mb-8">
+                探索我的精选项目集合，每一个链接都代表着创意与技术的结合
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects"
+                    class="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all flex items-center space-x-2">
+                    <i class="fa fa-rocket"></i>
+                    <span>浏览项目</span>
+                </a>
+                <a href="#about"
+                    class="px-6 py-3 bg-white hover:bg-gray-50 text-primary border border-primary/20 rounded-full shadow-md hover:shadow-lg transition-all flex items-center space-x-2">
+                    <i class="fa fa-user"></i>
+                    <span>关于我</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 项目展示区 -->
+        <section id="projects" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold mb-3">精选项目</h2>
+                <p class="text-dark/60 max-w-2xl mx-auto">每一个项目都是用心打造的作品，点击卡片查看详情</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 项目卡片1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://picsum.photos/seed/tailwind/800/600" alt="Tailwind CSS项目预览"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <span class="px-3 py-1 bg-primary/90 text-white text-xs rounded-full">CSS框架</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Tailwind CSS</h3>
+                        <p class="text-dark/70 mb-4">一个功能类优先的CSS框架，让你直接在HTML中使用各种工具类来快速构建和定制界面。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa fa-code text-primary"></i>
+                                <span class="text-sm text-dark/60">前端开发</span>
+                            </div>
+                            <a href="https://zsnoin.github.io/tailwindcss/#/" target="_blank"
+                                class="px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors flex items-center space-x-1">
+                                <span>访问</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目卡片2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://picsum.photos/seed/bocchi/800/600" alt="波奇壁纸项目预览"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <span class="px-3 py-1 bg-secondary/90 text-white text-xs rounded-full">壁纸集合</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">波奇壁纸</h3>
+                        <p class="text-dark/70 mb-4">收集了《孤独摇滚》中各种精美角色的高清壁纸，为你的设备带来不一样的视觉体验。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa fa-picture-o text-secondary"></i>
+                                <span class="text-sm text-dark/60">设计资源</span>
+                            </div>
+                            <a href="https://zsnoin.github.io/bocchi_wallpaper" target="_blank"
+                                class="px-4 py-2 bg-secondary/10 hover:bg-secondary/20 text-secondary rounded-lg transition-colors flex items-center space-x-1">
+                                <span>访问</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 占位卡片 - 可添加更多项目 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-8 h-full">
+                    <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+                        <i class="fa fa-plus text-gray-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-400 mb-2">更多项目</h3>
+                    <p class="text-center text-gray-400">更多精彩项目正在开发中，敬请期待</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于区 -->
+        <section id="about" class="py-16 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold mb-3">关于作者</h2>
+                <p class="text-dark/60 max-w-2xl mx-auto">探索我的更多信息和联系方式</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <img src="https://picsum.photos/seed/author/400/400" alt="作者照片"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="absolute -bottom-4 -right-4 bg-accent text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+                            <i class="fa fa-code text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">你好，我是 Zsnoin</h3>
+                    <p class="text-dark/70 mb-6 leading-relaxed">
+                        一名热爱前端开发的程序员，致力于创建美观、易用且高效的用户界面。我相信好的设计能够提升用户体验，让技术更有温度。
+                    </p>
+                    <p class="text-dark/70 mb-6 leading-relaxed">
+                        这里展示的是我的个人项目集合，每一个项目都代表着我的技术探索和创意实践。如果你对我的作品感兴趣，欢迎随时联系我。
+                    </p>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-[#1877F2]/10 hover:bg-[#1877F2]/20 text-[#1877F2] flex items-center justify-center transition-colors">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-[#1DA1F2]/10 hover:bg-[#1DA1F2]/20 text-[#1DA1F2] flex items-center justify-center transition-colors">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-[#E4405F]/10 hover:bg-[#E4405F]/20 text-[#E4405F] flex items-center justify-center transition-colors">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/Zsnoin"
+                            class="w-10 h-10 rounded-full bg-[#333]/10 hover:bg-[#333]/20 text-[#333] flex items-center justify-center transition-colors">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="inline-flex items-center space-x-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all">
+                        <i class="fa fa-envelope"></i>
+                        <span>联系我</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+                            <i class="fa fa-link"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Zsnoin网站集</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">探索我的精选项目集合，每一个链接都代表着创意与技术的结合</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">项目</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">关于</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">项目</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://zsnoin.github.io/tailwindcss/#/" target="_blank"
+                                class="text-gray-400 hover:text-white transition-colors">Tailwind CSS</a></li>
+                        <li><a href="https://zsnoin.github.io/bocchi_wallpaper" target="_blank"
+                                class="text-gray-400 hover:text-white transition-colors">波奇壁纸</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">联系我</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center space-x-2">
+                            <i class="fa fa-envelope text-primary"></i>
+                            <a href="mailto:example@example.com"
+                                class="text-gray-400 hover:text-white transition-colors">3201468129@qq.com</a>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa fa-phone text-primary"></i>
+                            <span class="text-gray-400">+86 159 1194 8978</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa fa-map-marker text-primary"></i>
+                            <span class="text-gray-400">中国</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">© 2025 Zsnoin网站集. 保留所有权利</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">隐私政策</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">使用条款</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Cookie政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all z-50">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        const backToTopBtn = document.getElementById('backToTop');
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-md');
+                navbar.classList.remove('py-3', 'shadow-sm');
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100');
+            } else {
+                navbar.classList.add('py-3', 'shadow-sm');
+                navbar.classList.remove('py-2', 'shadow-md');
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100');
+            }
+        });
+
+        // 移动端菜单切换
+        menuBtn.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('opacity-0')) {
+                mobileMenu.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'translate-y-0');
+                menuBtn.innerHTML = '<i class="fa fa-times text-xl"></i>';
+            } else {
+                mobileMenu.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+                menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // 关闭移动菜单（如果打开）
+                if (!mobileMenu.classList.contains('opacity-0')) {
+                    mobileMenu.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none');
+                    mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+                    menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+                }
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 返回顶部
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 图片懒加载效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img');
+            const imgOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px 100px 0px"
+            };
+
+            const imgObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.classList.add('opacity-100');
+                        img.classList.remove('opacity-0');
+                        observer.unobserve(img);
+                    }
+                });
+            }, imgOptions);
+
+            images.forEach(img => {
+                img.classList.add('transition-opacity', 'duration-700', 'opacity-0');
+                imgObserver.observe(img);
+            });
+        });
+    </script>
+</body>
+
+</html>
