@@ -89,7 +89,6 @@
 
     <!-- 主内容区 -->
     <main class="container mx-auto px-4 pt-24 pb-16">
-        <!-- 英雄区 -->
         <section id="home" class="min-h-[80vh] flex flex-col justify-center items-center text-center">
             <div
                 class="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 animate-float">
@@ -123,8 +122,43 @@
                 <p class="text-dark/60 max-w-2xl mx-auto">每一个项目都是用心打造的作品，点击卡片查看详情</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 项目卡片1 -->
+            <div id="projectsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop" alt="React项目预览"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <span class="px-3 py-1 bg-primary/90 text-white text-xs rounded-full">前端框架</span>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium rounded-full">
+                            <span class="text-primary font-bold">热门</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">React基础学习</h3>
+                        <p class="text-dark/70 mb-4">从零开始学习React，掌握组件化开发思想，构建现代化交互式用户界面。</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded">组件</span>
+                            <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded">状态管理</span>
+                            <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded">Hooks</span>
+                            <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded">JSX</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa fa-code text-primary"></i>
+                                <span class="text-sm text-dark/60">前端开发</span>
+                            </div>
+                            <a href="https://zsnoin.github.io/react" target="_blank"
+                                class="px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg transition-colors flex items-center space-x-1 shadow-md">
+                                <span>查看项目</span>
+                                <i class="fa fa-external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
                     <div class="relative h-48 overflow-hidden">
                         <img src="https://picsum.photos/seed/tailwind/800/600" alt="Tailwind CSS项目预览"
@@ -152,7 +186,6 @@
                     </div>
                 </div>
 
-                <!-- 项目卡片2 -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
                     <div class="relative h-48 overflow-hidden">
                         <img src="https://picsum.photos/seed/bocchi/800/600" alt="波奇壁纸项目预览"
@@ -330,6 +363,10 @@
         <i class="fa fa-arrow-up"></i>
     </button>
 
+    <!-- 引入清理卡片的JavaScript -->
+    <script src="cleanup-cards.js"></script>
+    <!-- 引入项目数据JavaScript -->
+    <script src="projects-data.js"></script>
     <script>
         // 导航栏滚动效果
         const navbar = document.getElementById('navbar');
